@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 final class GridBorderLayout extends StatelessWidget {
   const GridBorderLayout({
     super.key,
+    this.direction = Axis.vertical,
+    this.padding = const EdgeInsets.all(12.0),
     this.left = true,
     this.top = true,
     this.right = true,
@@ -10,6 +12,10 @@ final class GridBorderLayout extends StatelessWidget {
     this.borderThickness = 1.0,
     required this.child,
   });
+
+  final Axis direction;
+
+  final EdgeInsetsGeometry padding;
 
   final bool left;
   final bool top;
@@ -22,7 +28,38 @@ final class GridBorderLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Container(
+      padding: padding,
+      decoration: BoxDecoration(
+        border: Border(
+          top: top
+              ? BorderSide(
+                  color: Colors.white,
+                  width: borderThickness,
+                )
+              : BorderSide.none,
+          left: left
+              ? BorderSide(
+                  color: Colors.white,
+                  width: borderThickness,
+                )
+              : BorderSide.none,
+          bottom: bottom
+              ? BorderSide(
+                  color: Colors.white,
+                  width: borderThickness,
+                )
+              : BorderSide.none,
+          right: right
+              ? BorderSide(
+                  color: Colors.white,
+                  width: borderThickness,
+                )
+              : BorderSide.none,
+        ),
+      ),
+      child: child,
+    );
   }
 }
 
