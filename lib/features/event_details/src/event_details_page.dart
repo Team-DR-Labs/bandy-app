@@ -24,6 +24,7 @@ final class _EventDetailsPageState extends State<EventDetailsPage> {
         itemCount: 5,
         itemBuilder: (context, index) {
           return GridBorderLayout(
+            top: index == 0,
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text("리스트1"),
