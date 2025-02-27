@@ -28,9 +28,9 @@ class MyApp extends StatelessWidget {
 }
 
 enum BandyRoutes {
-  home(path: "home"),
-  eventList(path: "event_list"),
-  eventDetails(path: "event_details"),
+  home(path: "/home"),
+  eventList(path: "/event_list"),
+  eventDetails(path: "/event_details"),
   ;
 
   const BandyRoutes({
