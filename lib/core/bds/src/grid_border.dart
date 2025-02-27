@@ -48,13 +48,13 @@ final class GridBorderLayout extends StatelessWidget {
           Axis.horizontal => Border(
               left: left
                   ? BorderSide(
-                      color: Colors.white,
+                      color: Theme.of(context).colorScheme.outlineVariant,
                       width: borderThickness,
                     )
                   : BorderSide.none,
               right: right
                   ? BorderSide(
-                      color: Colors.white,
+                      color: Theme.of(context).colorScheme.outlineVariant,
                       width: borderThickness,
                     )
                   : BorderSide.none,
@@ -62,13 +62,13 @@ final class GridBorderLayout extends StatelessWidget {
           Axis.vertical => Border(
               top: top
                   ? BorderSide(
-                      color: Colors.white,
+                      color: Theme.of(context).colorScheme.outlineVariant,
                       width: borderThickness,
                     )
                   : BorderSide.none,
               bottom: bottom
                   ? BorderSide(
-                      color: Colors.white,
+                      color: Theme.of(context).colorScheme.outlineVariant,
                       width: borderThickness,
                     )
                   : BorderSide.none,
@@ -90,13 +90,13 @@ final class GridBorderLayout extends StatelessWidget {
             Axis.horizontal => Border(
                 top: top
                     ? BorderSide(
-                        color: Colors.white,
+                        color: Theme.of(context).colorScheme.outlineVariant,
                         width: borderThickness,
                       )
                     : BorderSide.none,
                 bottom: bottom
                     ? BorderSide(
-                        color: Colors.white,
+                        color: Theme.of(context).colorScheme.outlineVariant,
                         width: borderThickness,
                       )
                     : BorderSide.none,
@@ -104,13 +104,13 @@ final class GridBorderLayout extends StatelessWidget {
             Axis.vertical => Border(
                 left: left
                     ? BorderSide(
-                        color: Colors.white,
+                        color: Theme.of(context).colorScheme.outlineVariant,
                         width: borderThickness,
                       )
                     : BorderSide.none,
                 right: right
                     ? BorderSide(
-                        color: Colors.white,
+                        color: Theme.of(context).colorScheme.outlineVariant,
                         width: borderThickness,
                       )
                     : BorderSide.none,

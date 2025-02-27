@@ -104,7 +104,7 @@ final class _EventDetailsPageState extends State<EventDetailsPage> {
                   ),
                   VerticalDivider(
                     width: 1.0,
-                    color: Colors.white,
+                    color: Theme.of(context).colorScheme.outlineVariant,
                     indent: 0.0,
                     endIndent: 0.0,
                   ),
