@@ -6,7 +6,7 @@ final class GridBorderLayout extends StatelessWidget {
     this.direction = Axis.vertical,
     this.padding = const EdgeInsets.all(12.0),
     this.left = true,
-    this.top = true,
+    this.top = false,
     this.right = true,
     this.bottom = true,
     this.borderThickness = 1.0,
@@ -31,32 +31,36 @@ final class GridBorderLayout extends StatelessWidget {
     return Container(
       padding: padding,
       decoration: BoxDecoration(
-        border: Border(
-          top: top
-              ? BorderSide(
-                  color: Colors.white,
-                  width: borderThickness,
-                )
-              : BorderSide.none,
-          left: left
-              ? BorderSide(
-                  color: Colors.white,
-                  width: borderThickness,
-                )
-              : BorderSide.none,
-          bottom: bottom
-              ? BorderSide(
-                  color: Colors.white,
-                  width: borderThickness,
-                )
-              : BorderSide.none,
-          right: right
-              ? BorderSide(
-                  color: Colors.white,
-                  width: borderThickness,
-                )
-              : BorderSide.none,
-        ),
+        border: switch (direction) {
+          Axis.horizontal => Border(
+              left: left
+                  ? BorderSide(
+                      color: Colors.white,
+                      width: borderThickness,
+                    )
+                  : BorderSide.none,
+              right: right
+                  ? BorderSide(
+                      color: Colors.white,
+                      width: borderThickness,
+                    )
+                  : BorderSide.none,
+            ),
+          Axis.vertical => Border(
+              top: top
+                  ? BorderSide(
+                      color: Colors.white,
+                      width: borderThickness,
+                    )
+                  : BorderSide.none,
+              bottom: bottom
+                  ? BorderSide(
+                      color: Colors.white,
+                      width: borderThickness,
+                    )
+                  : BorderSide.none,
+            ),
+        },
       ),
       child: child,
     );
