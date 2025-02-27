@@ -72,6 +72,7 @@ final class GridBorderLayout extends StatelessWidget {
               horizontal: screenSpacing,
             ),
         },
+        padding: padding,
         decoration: BoxDecoration(
           border: switch (direction) {
             Axis.horizontal => Border(
@@ -117,8 +118,21 @@ final class GridBorderSpacer extends StatelessWidget {
 
   const GridBorderSpacer.vertical();
 
+  final bool left;
+  final bool top;
+  final bool right;
+  final bool bottom;
+
+  final double? width;
+  final double? height;
+
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return GridBorderLayout(
+      child: SizedBox(
+        width: width,
+        height: height,
+      ),
+    );
   }
 }
