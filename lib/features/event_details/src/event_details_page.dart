@@ -119,6 +119,36 @@ final class _EventDetailsPageState extends State<EventDetailsPage> {
               ),
             ),
           ),
+          GridBorderSpacer.vertical(
+            height: 8.0,
+          ),
+          GridBorderLayout(
+            child: DescriptionContainer(
+              title: Text("공연 관련 문의"),
+              description: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text("유다빈밴드"),
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    spacing: 12.0,
+                    children: [
+                      Icon(
+                        Icons.attach_email_outlined,
+                        size: 24.0,
+                        color: Theme.of(context).colorScheme.onSurfaceVariant,
+                      ),
+                      Icon(
+                        Icons.call_outlined,
+                        size: 24.0,
+                        color: Theme.of(context).colorScheme.onSurfaceVariant,
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ),
         ],
       ),
     );
