@@ -1,3 +1,4 @@
+import 'package:bandy/core/bds/bds.dart';
 import 'package:flutter/material.dart';
 
 final class EventDetailsPage extends StatefulWidget {
@@ -22,9 +23,11 @@ final class _EventDetailsPageState extends State<EventDetailsPage> {
       body: ListView.builder(
         itemCount: 5,
         itemBuilder: (context, index) {
-          return Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text("리스트1"),
+          return GridBorderLayout(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text("리스트1"),
+            ),
           );
         },
       ),
