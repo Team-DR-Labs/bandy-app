@@ -14,6 +14,18 @@ final class GridBorderLayout extends StatelessWidget {
     required this.child,
   });
 
+  const GridBorderLayout.horizontal({
+    super.key,
+    this.padding = const EdgeInsets.all(12.0),
+    this.screenSpacing = 4.0,
+    this.left = false,
+    this.top = true,
+    this.right = true,
+    this.bottom = true,
+    this.borderThickness = 1.0,
+    required this.child,
+  }) : direction = Axis.horizontal;
+
   final Axis direction;
 
   final EdgeInsetsGeometry padding;
@@ -112,23 +124,66 @@ final class GridBorderLayout extends StatelessWidget {
 }
 
 final class GridBorderSpacer extends StatelessWidget {
-  const GridBorderSpacer({super.key});
+  const GridBorderSpacer({
+    super.key,
+    required this.direction,
+    this.screenSpacing = 4.0,
+    this.left = true,
+    this.top = false,
+    this.right = true,
+    this.bottom = true,
+    this.borderThickness = 1.0,
+    required this.width,
+    required this.height,
+  });
 
-  const GridBorderSpacer.horizontal();
+  const GridBorderSpacer.horizontal({
+    super.key,
+    this.screenSpacing = 4.0,
+    this.left = false,
+    this.top = true,
+    this.right = true,
+    this.bottom = true,
+    this.borderThickness = 1.0,
+    required this.width,
+  })  : direction = Axis.horizontal,
+        height = 0.0;
 
-  const GridBorderSpacer.vertical();
+  const GridBorderSpacer.vertical({
+    super.key,
+    this.screenSpacing = 4.0,
+    this.left = true,
+    this.top = false,
+    this.right = true,
+    this.bottom = true,
+    this.borderThickness = 1.0,
+    required this.width,
+  })  : direction = Axis.vertical,
+        height = 0.0;
+
+  final Axis direction;
+
+  final double screenSpacing;
 
   final bool left;
   final bool top;
   final bool right;
   final bool bottom;
 
-  final double? width;
-  final double? height;
+  final double borderThickness;
+
+  final double width;
+  final double height;
 
   @override
   Widget build(BuildContext context) {
     return GridBorderLayout(
+      direction: direction,
+      screenSpacing: screenSpacing,
+      left: left,
+      top: top,
+      right: right,
+      bottom: bottom,
       child: SizedBox(
         width: width,
         height: height,
