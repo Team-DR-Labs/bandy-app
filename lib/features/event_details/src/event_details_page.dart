@@ -149,6 +149,133 @@ final class _EventDetailsPageState extends State<EventDetailsPage> {
               ),
             ),
           ),
+          GridBorderSpacer.vertical(
+            height: 8.0,
+          ),
+          GridBorderLayout(
+            child: DescriptionContainer(
+              spacing: 12.0,
+              title: Text("관련 공연"),
+              description: GridView(
+                shrinkWrap: true,
+                scrollDirection: Axis.vertical,
+                physics: NeverScrollableScrollPhysics(),
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  mainAxisSpacing: 24.0,
+                  crossAxisSpacing: 12.0,
+                  childAspectRatio: 0.6,
+                ),
+                children: [
+                  Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Expanded(
+                        child: Container(
+                          width: double.infinity,
+                          color: Colors.blue,
+                        ),
+                      ),
+                      const SizedBox(height: 4.0),
+                      Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text("공연명몀염여며"),
+                          Text("2024.08.30 - 2024.09.01"),
+                        ],
+                      ),
+                    ],
+                  ),
+                  Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Expanded(
+                        child: Container(
+                          width: double.infinity,
+                          color: Colors.purple,
+                        ),
+                      ),
+                      const SizedBox(height: 4.0),
+                      Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text("공연명몀염여며"),
+                          Text("2024.08.30 - 2024.09.01"),
+                        ],
+                      ),
+                    ],
+                  ),
+                  Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Expanded(
+                        child: Container(
+                          width: double.infinity,
+                          color: Colors.yellow,
+                        ),
+                      ),
+                      const SizedBox(height: 4.0),
+                      Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text("공연명몀염여며"),
+                          Text("2024.08.30 - 2024.09.01"),
+                        ],
+                      ),
+                    ],
+                  ),
+                  Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Expanded(
+                        child: Container(
+                          width: double.infinity,
+                          color: Colors.cyan,
+                        ),
+                      ),
+                      const SizedBox(height: 4.0),
+                      Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text("공연명몀염여며"),
+                          Text("2024.08.30 - 2024.09.01"),
+                        ],
+                      ),
+                    ],
+                  ),
+                  Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Expanded(
+                        child: Container(
+                          width: double.infinity,
+                          color: Colors.green,
+                        ),
+                      ),
+                      const SizedBox(height: 4.0),
+                      Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text("공연명몀염여며"),
+                          Text("2024.08.30 - 2024.09.01"),
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ),
         ],
       ),
     );
