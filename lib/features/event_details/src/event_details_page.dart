@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:bandy/core/bds/bds.dart';
 import 'package:flutter/material.dart';
 
@@ -21,8 +23,13 @@ final class _EventDetailsPageState extends State<EventDetailsPage> {
         ),
       ),
       body: ListView.builder(
-        itemCount: 5,
+        itemCount: 50,
         itemBuilder: (context, index) {
+          if (index % 7 == 0) {
+            return GridBorderSpacer.vertical(
+              height: 8.0,
+            );
+          }
           return GridBorderLayout(
             top: index == 0,
             child: Padding(
