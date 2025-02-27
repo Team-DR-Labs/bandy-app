@@ -19,7 +19,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.dark(
         useMaterial3: true,
       ),
-      routerConfig: _bandyRoute(),
+      routerConfig: _bandyRoute(
+        // TODO: GET INITIAL ROUTE
+        initialRoute: BandyRoutes.eventDetails,
+      ),
     );
   }
 }
@@ -37,7 +40,11 @@ enum BandyRoutes {
   final String path;
 }
 
-GoRouter _bandyRoute() => GoRouter(
+GoRouter _bandyRoute({
+  required BandyRoutes initialRoute,
+}) =>
+    GoRouter(
+      initialLocation: initialRoute.path,
       routes: [
         GoRoute(
           path: BandyRoutes.home.path,
