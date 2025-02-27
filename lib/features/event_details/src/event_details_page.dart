@@ -1,6 +1,5 @@
-import 'dart:math';
-
 import 'package:bandy/core/bds/bds.dart';
+import 'package:bandy/features/event_details/src/widgets/event_images.dart';
 import 'package:flutter/material.dart';
 
 final class EventDetailsPage extends StatefulWidget {
@@ -22,22 +21,14 @@ final class _EventDetailsPageState extends State<EventDetailsPage> {
           ),
         ),
       ),
-      body: ListView.builder(
-        itemCount: 50,
-        itemBuilder: (context, index) {
-          if (index % 7 == 0) {
-            return GridBorderSpacer.vertical(
-              height: 8.0,
-            );
-          }
-          return GridBorderLayout(
-            top: index == 0,
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text("리스트1"),
-            ),
-          );
-        },
+      body: ListView(
+        children: [
+          GridBorderLayout(
+            top: true,
+            padding: EdgeInsets.zero,
+            child: EventImages(),
+          ),
+        ],
       ),
     );
   }
