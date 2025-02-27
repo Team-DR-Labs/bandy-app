@@ -5,6 +5,7 @@ final class GridBorderLayout extends StatelessWidget {
     super.key,
     this.direction = Axis.vertical,
     this.padding = const EdgeInsets.all(12.0),
+    this.screenSpacing = 4.0,
     this.left = true,
     this.top = false,
     this.right = true,
@@ -16,6 +17,7 @@ final class GridBorderLayout extends StatelessWidget {
   final Axis direction;
 
   final EdgeInsetsGeometry padding;
+  final double screenSpacing;
 
   final bool left;
   final bool top;
@@ -29,7 +31,6 @@ final class GridBorderLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: padding,
       decoration: BoxDecoration(
         border: switch (direction) {
           Axis.horizontal => Border(
@@ -62,7 +63,49 @@ final class GridBorderLayout extends StatelessWidget {
             ),
         },
       ),
-      child: child,
+      child: Container(
+        margin: switch (direction) {
+          Axis.horizontal => EdgeInsets.symmetric(
+              vertical: screenSpacing,
+            ),
+          Axis.vertical => EdgeInsets.symmetric(
+              horizontal: screenSpacing,
+            ),
+        },
+        decoration: BoxDecoration(
+          border: switch (direction) {
+            Axis.horizontal => Border(
+                top: top
+                    ? BorderSide(
+                        color: Colors.white,
+                        width: borderThickness,
+                      )
+                    : BorderSide.none,
+                bottom: bottom
+                    ? BorderSide(
+                        color: Colors.white,
+                        width: borderThickness,
+                      )
+                    : BorderSide.none,
+              ),
+            Axis.vertical => Border(
+                left: left
+                    ? BorderSide(
+                        color: Colors.white,
+                        width: borderThickness,
+                      )
+                    : BorderSide.none,
+                right: right
+                    ? BorderSide(
+                        color: Colors.white,
+                        width: borderThickness,
+                      )
+                    : BorderSide.none,
+              ),
+          },
+        ),
+        child: child,
+      ),
     );
   }
 }
