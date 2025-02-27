@@ -147,7 +147,7 @@ final class GridBorderSpacer extends StatelessWidget {
     this.borderThickness = 1.0,
     required this.width,
   })  : direction = Axis.horizontal,
-        height = 0.0;
+        height = double.infinity;
 
   const GridBorderSpacer.vertical({
     super.key,
@@ -157,9 +157,9 @@ final class GridBorderSpacer extends StatelessWidget {
     this.right = true,
     this.bottom = true,
     this.borderThickness = 1.0,
-    required this.width,
+    required this.height,
   })  : direction = Axis.vertical,
-        height = 0.0;
+        width = double.infinity;
 
   final Axis direction;
 
@@ -179,6 +179,7 @@ final class GridBorderSpacer extends StatelessWidget {
   Widget build(BuildContext context) {
     return GridBorderLayout(
       direction: direction,
+      padding: EdgeInsets.zero,
       screenSpacing: screenSpacing,
       left: left,
       top: top,
