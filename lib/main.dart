@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import 'features/event_details/event_details.dart';
+import 'features/event_list/event_list.dart';
+import 'features/home/home.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -43,11 +47,15 @@ GoRouter _bandyRoute() => GoRouter(
         ),
         GoRoute(
           path: BandyRoutes.eventList.path,
-          builder: (context, state) {},
+          builder: (context, state) {
+            return EventListPage();
+          },
         ),
         GoRoute(
           path: BandyRoutes.eventDetails.path,
-          builder: (context, state) {},
+          builder: (context, state) {
+            return EventDetailsPage();
+          },
         ),
       ],
     );
