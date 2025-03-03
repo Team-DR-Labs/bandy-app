@@ -1,5 +1,4 @@
 import 'package:bandy/core/bds/bds.dart';
-import 'package:bandy/core/bds/src/description_container.dart';
 import 'package:bandy/features/event_details/src/widgets/event_images.dart';
 import 'package:flutter/material.dart';
 
@@ -20,6 +19,26 @@ final class _EventDetailsPageState extends State<EventDetailsPage> {
           icon: Icon(
             Icons.arrow_back_ios_new_rounded,
           ),
+        ),
+      ),
+      bottomNavigationBar: BottomAppBar(
+        child: Row(
+          mainAxisSize: MainAxisSize.max,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          spacing: 4.0,
+          children: [
+            Expanded(
+              child: PlainButton(
+                child: Text("예매하기"),
+              ),
+            ),
+            PlainButton(
+              child: Icon(
+                Icons.bookmark_outline_rounded,
+                color: Colors.black,
+              ),
+            ),
+          ],
         ),
       ),
       body: ListView(
